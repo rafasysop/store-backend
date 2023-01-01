@@ -13,7 +13,13 @@ const UserSchema = new Schema({
   name: String,
   lastName: String,
   password: String,
-  email: String,
+  email: {
+    type: String,
+    lowercase: true,
+    trim: true,
+    index: true,
+    unique: true,
+  },
   profile: String,
   active: Boolean,
 });

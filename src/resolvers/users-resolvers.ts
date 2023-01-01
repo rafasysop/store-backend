@@ -18,8 +18,13 @@ export class UsersResolver {
   @Query(() => AuthModel)
   async auth(@Arg("auth") { email, password }: AuthInput) {
     const user = await UserSchema.findOne({ email });
+    if (!user?.active) {
+      return { msg: "Usuário Inativo" };
+    }
+
     if (
       !!user?.password &&
+      !!user?.active &&
       (await compare(password as string, user?.password as string))
     ) {
       const token = await jwt.sign(
@@ -37,7 +42,7 @@ export class UsersResolver {
       return { msg: "ok", token };
     }
 
-    return { msg: "Login ou Senha Incorretos" };
+    return { msg: "Usuário ou Senha Incorretos" };
   }
 
   @Mutation(() => CreateUserModel)
