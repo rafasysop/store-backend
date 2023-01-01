@@ -35,7 +35,7 @@ export class UsersResolver {
           profile: user?.profile,
           active: user?.active,
         },
-        process.env.SECRET_JWT!,
+        process.env.SECRET_JWT || "xTz",
         { expiresIn: 3600 }
       );
 

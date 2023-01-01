@@ -3,20 +3,20 @@ import { InputType, Field } from "type-graphql";
 @InputType()
 export class CreateUserInput {
   @Field()
-  name: String;
+  name: string;
 
   @Field()
-  lastName: String;
+  lastName: string;
 
   @Field()
-  password: String;
+  password: string;
 
   @Field()
-  email: String;
+  email: string;
 
   @Field()
-  profile: String;
+  profile: string;
 
   @Field()
-  active: Boolean;
+  active: boolean;
 }

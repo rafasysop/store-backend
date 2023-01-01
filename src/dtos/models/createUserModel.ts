@@ -3,17 +3,17 @@ import { ObjectType, Field } from "type-graphql";
 @ObjectType()
 export class CreateUserModel {
   @Field()
-  name: String;
+  name: string;
 
   @Field()
-  lastName: String;
+  lastName: string;
 
   @Field()
-  email: String;
+  email: string;
 
   @Field()
-  profile: String;
+  profile: string;
 
   @Field()
-  active: Boolean;
+  active: boolean;
 }

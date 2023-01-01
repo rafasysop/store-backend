@@ -3,8 +3,8 @@ import { ObjectType, Field } from "type-graphql";
 @ObjectType()
 export class AuthModel {
   @Field()
-  msg: String;
+  msg: string;
 
   @Field({ nullable: true })
-  token?: String;
+  token?: string;
 }

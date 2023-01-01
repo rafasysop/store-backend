@@ -1,12 +1,12 @@
 import mongoose, { Schema } from "mongoose";
 
 type User = {
-  name: String;
-  lastName: String;
-  password: String;
-  email: String;
-  profile: String;
-  active: Boolean;
+  name: string;
+  lastName: string;
+  password: string;
+  email: string;
+  profile: string;
+  active: boolean;
 };
 
 const UserSchema = new Schema({

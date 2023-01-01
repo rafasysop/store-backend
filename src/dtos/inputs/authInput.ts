@@ -3,8 +3,8 @@ import { InputType, Field } from "type-graphql";
 @InputType()
 export class AuthInput {
   @Field()
-  password: String;
+  password: string;
 
   @Field({ nullable: false })
-  email: String;
+  email: string;
 }
