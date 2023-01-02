@@ -4,7 +4,7 @@ import * as dotenv from "dotenv";
 import "./db/connection";
 
 import { buildSchema } from "type-graphql/dist/utils";
-import { UsersResolver } from "./resolvers/users-resolvers";
+import { UsersResolver } from "./resolvers/usersResolvers";
 
 import path from "node:path";
 
