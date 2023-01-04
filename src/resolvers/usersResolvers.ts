@@ -18,15 +18,14 @@ export class UsersResolver {
   @Query(() => AuthModel)
   async auth(@Arg("auth") { email, password }: AuthInput) {
     const user = await UserSchema.findOne({ email });
-    if (!user?.active) {
-      return { msg: "Usuário Inativo" };
-    }
-
     if (
       !!user?.password &&
-      !!user?.active &&
       (await compare(password as string, user?.password as string))
     ) {
+      if (!user?.active) {
+        return { msg: "Usuário Inativo" };
+      }
+
       const token = await jwt.sign(
         {
           name: user?.name,
